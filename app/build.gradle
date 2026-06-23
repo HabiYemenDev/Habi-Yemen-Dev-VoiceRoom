@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.yemeni.voicer'
+    namespace 'com.habiyemen.voiceroom'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.yemeni.voicer"
+        applicationId "com.habiyemen.voiceroom"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -15,13 +15,14 @@ android {
     }
 
     buildTypes {
-        debug { debuggable true }
-        release { minifyEnabled false }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
 }
